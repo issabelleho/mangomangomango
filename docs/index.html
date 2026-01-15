@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Your Name</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#home" data-go="home">
+        <span class="sparkle">✦</span> Your Name
+      </a>
+
+      <nav class="nav">
+        <button class="navlink" data-go="home">Home</button>
+        <button class="navlink" data-go="projects">Projects</button>
+        <button class="navlink" data-go="about">About</button>
+        <a class="navlink" href="mailto:you@example.com">Email</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <!-- HOME -->
+      <section id="home" class="panel is-active" aria-label="Home">
+        <div class="hero">
+          <div>
+            <h1>Hi, I’m <span class="accent">Your Name</span> ✨</h1>
+            <p class="subtitle">
+              I build things I’m proud of. Click a project tab below to peek inside.
+            </p>
+
+            <div class="pillrow">
+              <span class="pill">CS @ McGill</span>
+              <span class="pill">AI / ML</span>
+              <span class="pill">Design</span>
+            </div>
+
+            <div class="ctaRow">
+              <button class="btn" data-go="projects">See projects</button>
+              <a class="btn ghost" href="#" target="_blank" rel="noreferrer">Resume</a>
+            </div>
+          </div>
+
+          <div class="profileCard">
+            <div class="profilePic" aria-hidden="true"></div>
+            <div class="profileText">
+              <p class="nameLine">Your Name</p>
+              <p class="tiny">Portfolio • GitHub Pages</p>
+              <div class="socialRow">
+                <a href="https://github.com/yourusername" target="_blank" rel="noreferrer">GitHub</a>
+                <span>•</span>
+                <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noreferrer">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <h2 class="sectionTitle">Project tabs</h2>
+        <p class="sectionHint">Square thumbnails you can click like tabs 👇</p>
+
+        <div class="grid" role="tablist" aria-label="Project tabs">
+          <!-- Replace images in /assets and titles/descriptions -->
+          <button class="tile" role="tab" aria-selected="false" data-project="proj-mlp">
+            <img src="assets/proj1.jpg" alt="Thumbnail for Project 1" />
+            <div class="tileOverlay">
+              <div class="tileTitle">KMNIST ConvNet</div>
+              <div class="tileTag">ML • Vision</div>
+            </div>
+          </button>
+
+          <button class="tile" role="tab" aria-selected="false" data-project="proj-db">
+            <img src="assets/proj2.jpg" alt="Thumbnail for Project 2" />
+            <div class="tileOverlay">
+              <div class="tileTitle">DB Query Eval</div>
+              <div class="tileTag">Databases</div>
+            </div>
+          </button>
+
+          <button class="tile" role="tab" aria-selected="false" data-project="proj-unity">
+            <img src="assets/proj3.jpg" alt="Thumbnail for Project 3" />
+            <div class="tileOverlay">
+              <div class="tileTitle">Unity Pathfinding</div>
+              <div class="tileTag">Game AI</div>
+            </div>
+          </button>
+
+          <button class="tile" role="tab" aria-selected="false" data-project="proj-writing">
+            <img src="assets/proj4.jpg" alt="Thumbnail for Project 4" />
+            <div class="tileOverlay">
+              <div class="tileTitle">Writing + Research</div>
+              <div class="tileTag">Essays</div>
+            </div>
+          </button>
+        </div>
+
+        <div class="tip">
+          <span>Tip:</span> put your square-ish images in <code>assets/</code> (they’ll be cropped to squares automatically).
+        </div>
+      </section>
+
+      <!-- PROJECTS (tab content) -->
+      <section id="projects" class="panel" aria-label="Projects">
+        <div class="panelHeader">
+          <h2>Projects</h2>
+          <p class="sectionHint">Click a tab (on Home) or pick one here.</p>
+
+          <div class="chipRow">
+            <button class="chip" data-open="proj-mlp">KMNIST ConvNet</button>
+            <button class="chip" data-open="proj-db">DB Query Eval</button>
+            <button class="chip" data-open="proj-unity">Unity Pathfinding</button>
+            <button class="chip" data-open="proj-writing">Writing + Research</button>
+          </div>
+        </div>
+
+        <article class="project" id="proj-mlp">
+          <div class="projectMedia">
+            <img src="assets/proj1.jpg" alt="Project 1 thumbnail" />
+          </div>
+          <div class="projectBody">
+            <h3>KMNIST ConvNet</h3>
+            <p>
+              One-liner about what you built and why it matters. Keep it short and confident.
+            </p>
+            <ul>
+              <li>What you did (e.g., trained CNN, ran ablations)</li>
+              <li>What you learned (e.g., regularization, data aug)</li>
+              <li>Result (e.g., accuracy, speed, insight)</li>
+            </ul>
+            <div class="linkRow">
+              <a class="btn small" href="#" target="_blank" rel="noreferrer">Code</a>
+              <a class="btn small ghost" href="#" target="_blank" rel="noreferrer">Write-up</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project" id="proj-db">
+          <div class="projectMedia">
+            <img src="assets/proj2.jpg" alt="Project 2 thumbnail" />
+          </div>
+          <div class="projectBody">
+            <h3>DB Query Evaluation</h3>
+            <p>
+              Describe the problem (joins, cost models, transactions) and your approach.
+            </p>
+            <ul>
+              <li>SQL / query plans / optimization</li>
+              <li>Performance comparisons</li>
+              <li>Key takeaway</li>
+            </ul>
+            <div class="linkRow">
+              <a class="btn small" href="#" target="_blank" rel="noreferrer">Repo</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project" id="proj-unity">
+          <div class="projectMedia">
+            <img src="assets/proj3.jpg" alt="Project 3 thumbnail" />
+          </div>
+          <div class="projectBody">
+            <h3>Unity Pathfinding + AI</h3>
+            <p>
+              Mention the planner/algorithm and the neat part (visualization, UI, behaviors).
+            </p>
+            <ul>
+              <li>Planner + obstacles + cost grid</li>
+              <li>Readable UI plan display</li>
+              <li>Design choices</li>
+            </ul>
+            <div class="linkRow">
+              <a class="btn small" href="#" target="_blank" rel="noreferrer">Demo</a>
+              <a class="btn small ghost" href="#" target="_blank" rel="noreferrer">Code</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project" id="proj-writing">
+          <div class="projectMedia">
+            <img src="assets/proj4.jpg" alt="Project 4 thumbnail" />
+          </div>
+          <div class="projectBody">
+            <h3>Writing + Research</h3>
+            <p>
+              A short description of your writing interests or public pieces.
+            </p>
+            <ul>
+              <li>Topic area</li>
+              <li>What you argue / explore</li>
+              <li>Any publication/class context</li>
+            </ul>
+            <div class="linkRow">
+              <a class="btn small" href="#" target="_blank" rel="noreferrer">Read</a>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="panel" aria-label="About">
+        <h2>About</h2>
+        <p class="subtitle">
+          Write 3–5 lines: what you’re studying, what you like building, what you’re looking for.
+        </p>
+
+        <div class="aboutGrid">
+          <div class="card">
+            <h3>What I do</h3>
+            <p>ML, software, design-y projects, and anything with a nice UI.</p>
+          </div>
+          <div class="card">
+            <h3>Currently</h3>
+            <p>Looking for internships + building cool things.</p>
+          </div>
+          <div class="card">
+            <h3>Contact</h3>
+            <p>
+              <a href="mailto:you@example.com">you@example.com</a><br />
+              <a href="https://github.com/yourusername" target="_blank" rel="noreferrer">GitHub</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span>© <span id="year"></span> Your Name</span>
+        <span class="dot">•</span>
+        <span>made with cozy vibes ☁️</span>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
