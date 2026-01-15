@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>About — Isabelle Ho</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+
+  <body>
+    <main class="wrap">
+      <header class="sectionTop">
+        <a class="back" href="index.html">← Home</a>
+        <h2>About Me</h2>
+      </header>
+
+      <section class="aboutLayout">
+        <div class="aboutText">
+          <h3>Hello :)</h3>
+          <p>
+            Write a short intro here. (Who you are, what you’re studying, what you’re into.)
+          </p>
+
+          <p>
+            Add more paragraphs: what you like building, what you care about, what you’re looking for.
+          </p>
+
+          <div class="aboutLinks">
+            <a href="mailto:isabelleho.mail@gmail.com">Email</a>
+            <span class="sep">/</span>
+            <a href="https://github.com/issabelleho" target="_blank" rel="noreferrer">GitHub</a>
+          </div>
+        </div>
+
+        <div class="aboutGallery" aria-label="Photo gallery">
+          <!-- Put images in assets/ and change filenames here -->
+          <img src="assets/about1.jpg" alt="About photo 1" />
+          <img src="assets/about2.jpg" alt="About photo 2" />
+          <img src="assets/about3.jpg" alt="About photo 3" />
+        </div>
+      </section>
+
+      <footer class="footer">
+        <span>© <span id="year"></span> Isabelle Ho</span>
+      </footer>
+    </main>
+
+    <script>
+      const y = document.getElementById("year");
+      if (y) y.textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
