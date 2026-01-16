@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Designs — Isabelle Ho</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <main class="wrap">
+    <header class="sectionTop">
+      <a class="back" href="projects.html">← Back</a>
+    </header>
+
+    <h2 class="projectsTitle projectsTitle--lower">Graphic Designs</h2>
+
+    <section class="designGrid">
+      <!-- Each tile is clickable (opens popup). data-full can be same as src. -->
+
+      <button class="designCard" type="button" data-full="assets/designs/design4.gif" aria-label="Open Design 4">
+        <img src="assets/designs/design4.gif" alt="Design 4 animated">
+      </button>
+
+      <button class="designCard" type="button" data-full="assets/designs/design5.gif" aria-label="Open Design 5">
+        <img src="assets/designs/design5.gif" alt="Design 5 animated">
+      </button>
+
+      <button class="designCard" type="button" data-full="assets/designs/design1.png" aria-label="Open Design 1">
+        <img src="assets/designs/design1.png" alt="Design 1">
+      </button>
+
+      <button class="designCard" type="button" data-full="assets/designs/design2.png" aria-label="Open Design 2">
+        <img src="assets/designs/design2.png" alt="Design 2">
+      </button>
+
+      <button class="designCard" type="button" data-full="assets/designs/design3.png" aria-label="Open Design 3">
+        <img src="assets/designs/design3.png" alt="Design 3">
+      </button>
+
+      <button class="designCard" type="button" data-full="assets/designs/design6.png" aria-label="Open Design 6">
+        <img src="assets/designs/design6.png" alt="Design 6">
+      </button>
+
+      <button class="designCard" type="button" data-full="assets/designs/design7.png" aria-label="Open Design 7">
+        <img src="assets/designs/design7.png" alt="Design 7">
+      </button>
+
+      <button class="designCard" type="button" data-full="assets/designs/design8.png" aria-label="Open Design 8">
+        <img src="assets/designs/design8.png" alt="Design 8">
+      </button>
+
+      <button class="designCard" type="button" data-full="assets/designs/design9.jpg" aria-label="Open Design 9">
+        <img src="assets/designs/design9.jpg" alt="Design 9">
+      </button>
+
+      <button class="designCard" type="button" data-full="assets/designs/design10.jpg" aria-label="Open Design 10">
+        <img src="assets/designs/design10.jpg" alt="Design 10">
+      </button>
+
+      <button class="designCard" type="button" data-full="assets/designs/design11.jpg" aria-label="Open Design 11">
+        <img src="assets/designs/design11.jpg" alt="Design 11">
+      </button>
+
+      <button class="designCard" type="button" data-full="assets/designs/design12.png" aria-label="Open Design 12">
+        <img src="assets/designs/design12.png" alt="Design 12">
+      </button>
+
+      <button class="designCard" type="button" data-full="assets/designs/design13.jpg" aria-label="Open Design 13">
+        <img src="assets/designs/design13.jpg" alt="Design 13">
+      </button>
+
+      <button class="designCard" type="button" data-full="assets/designs/design14.jpg" aria-label="Open Design 14">
+        <img src="assets/designs/design14.jpg" alt="Design 14">
+      </button>
+
+      <button class="designCard" type="button" data-full="assets/designs/design15.png" aria-label="Open Design 15">
+        <img src="assets/designs/design15.png" alt="Design 15">
+      </button>
+
+      <button class="designCard" type="button" data-full="assets/designs/design16.jpg" aria-label="Open Design 16">
+        <img src="assets/designs/design16.jpg" alt="Design 16">
+      </button>
+    </section>
+  </main>
+
+  <!-- Popup modal -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightboxBackdrop" data-close></div>
+
+    <div class="lightboxPanel" role="dialog" aria-modal="true" aria-label="Design preview">
+      <button class="lightboxClose" type="button" data-close aria-label="Close">×</button>
+      <img id="lightboxImg" class="lightboxImg" alt="">
+    </div>
+  </div>
+
+  <script src="designs.js"></script>
+</body>
+</html>

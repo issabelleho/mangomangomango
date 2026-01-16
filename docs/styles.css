@@ -578,7 +578,7 @@ a:hover{ text-decoration: underline; }
 }
 
 
-/* project page */
+/* project page!!!! */
 .projectsTitle{
   font-family: "Ballet", cursive;
   font-weight: 400;
@@ -586,4 +586,287 @@ a:hover{ text-decoration: underline; }
   font-size: 90px;
   text-align: center;
   margin: 10px 0 28px;
+}
+
+/* Project page links */
+.itemLinks a{
+  color: #cca1c3;                 
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease, text-shadow 0.2s ease;
+}
+
+.itemLinks a:hover{
+  color: #ff6fd8;                 /* hot pink hover */
+  text-shadow: 0 0 6px rgba(255,111,216,0.6);
+}
+
+/* ===== Projects title ===== */
+.projectsTitle{
+  font-family: "Ballet", cursive;
+  font-weight: 400;
+  line-height: 0.9;
+  font-size: clamp(54px, 6vw, 90px);
+  text-align: center;
+  margin: 0;
+}
+
+/* Lower the Projects title like About page */
+.projectsTitle--lower{
+  margin-top: 12px;
+  margin-bottom: 30px;
+}
+
+/* ===== Magazine grid ===== */
+.projectGrid{
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+/* Responsive */
+@media (max-width: 980px){
+  .projectGrid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px){
+  .projectGrid{ grid-template-columns: 1fr; }
+}
+
+/* ===== Magazine project card ===== */
+.projCard{
+  border: 1px solid var(--line);
+  border-radius: 0;
+  overflow: hidden;
+  background: #000;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 460px;              /* 👈 shorter overall card */
+  transition: transform 0.18s ease, border-color 0.18s ease;
+}
+
+.projCard:hover{
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,0.35);
+}
+
+/* ===== Larger image area ===== */
+.projMedia{
+  aspect-ratio: 16 / 9;           /* keep rectangle */
+  height: 290px;                  /* 👈 force more visual weight */
+  background: #0b0b0b;
+  overflow: hidden;
+  display: flex;
+  align-items: center;     /* vertical center */
+  justify-content: center;
+  width: 100%;
+  object-fit: cover;
+  object-position: center center; 
+  display: block; /* horizontal center */
+}
+
+
+
+.projMedia img{
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== Card body (shorter text zone) ===== */
+.projBody{
+  padding: 14px 16px 16px;        /* 👈 tighter padding */
+  display: flex;
+  flex-direction: column;
+}
+
+.projBody h3{
+  margin: 0 0 6px;
+  font-size: 17px;
+}
+
+.projBody p{
+  margin: 0 0 10px;
+  font-size: 13.5px;
+  line-height: 1.55;              /* 👈 tighter paragraph */
+  color: var(--fg-dim);
+}
+
+/* Keep links pinned low without stretching card */
+.projBody .itemLinks{
+  margin-top: auto;
+  font-size: 13px;
+  padding-top: 8px;
+}
+
+/* Project title with subtitle on next line */
+.projTitle{
+  font-size: 20px;
+  line-height: 1.3;
+  margin: 0 0 10px;
+}
+
+/* Second line: same font, softer emphasis */
+.projSub{
+  display: block;              /* 👈 forces new line */
+  font-size: 14px;
+  margin-top: 4px;
+}
+
+/* ===== Designs grid ===== */
+.designGrid{
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+/* Responsive */
+@media (max-width: 1100px){
+  .designGrid{ grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 800px){
+  .designGrid{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px){
+  .designGrid{ grid-template-columns: 1fr; }
+}
+
+/* Individual design tile */
+.designCard{
+  aspect-ratio: 3 / 4;          /* magazine feel */
+  border: 1px solid var(--line);
+  background: #000;
+  overflow: hidden;
+
+  /* animation start state */
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Image */
+.designCard img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Animation when visible */
+.designCard.is-visible{
+  animation: fadeUp 500ms ease-out forwards;
+}
+
+/* Stagger animation */
+@keyframes fadeUp{
+  from{
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Make design tiles behave like buttons */
+.designCard{
+  appearance: none;
+  border: 1px solid var(--line);
+  background: #000;
+  padding: 0;
+  cursor: pointer;
+  overflow: hidden;
+
+  aspect-ratio: 3 / 4;
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.designCard:hover{
+  border-color: #cca1c3;
+  box-shadow:
+    0 0 0 1px rgba(204,161,195,0.6),
+    0 0 18px rgba(204,161,195,0.45),
+    0 0 36px rgba(204,161,195,0.25);
+  transform: translateY(-2px);
+}
+
+.designCard:focus{
+  outline: 2px solid rgba(204,161,195,0.7);
+  outline-offset: 2px;
+}
+
+.designCard img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== Lightbox popup ===== */
+.lightbox{
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 9999;
+}
+
+.lightbox.is-open{
+  display: block;
+}
+
+.lightboxBackdrop{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+}
+
+.lightboxPanel{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  width: min(980px, calc(100% - 28px));
+  max-height: calc(100% - 28px);
+
+
+  background: #000;
+  overflow: hidden;
+}
+
+.lightboxImg{
+  width: 100%;
+  height: 100%;
+  max-height: calc(100vh - 90px);
+  object-fit: contain;
+  display: block;
+  background: #000;
+}
+
+.lightboxClose{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--line);
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.lightboxClose:hover{
+  border-color: rgba(255,255,255,0.45);
+  color: #cca1c3;
 }

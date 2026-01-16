@@ -11,56 +11,201 @@
     <main class="wrap">
       <!-- Top nav -->
       <header class="sectionTop">
-        <a class="back" href="index.html">← Home</a>
-      </header>
+  <a class="back" href="index.html">← Home</a>
+</header>
 
-      <!-- Title -->
-      <h2 class="projectsTitle">Projects  + Experience</h2>
+<h2 class="projectsTitle projectsTitle--lower">Projects + Experience</h2>
 
-      <!-- Projects list -->
-      <div class="list">
-        <article class="item">
-          <h3>Othello AI Bot</h3>
-          <p>An Othello AI that combines Monte Carlo Tree Search and Minimax with Alpha-Beta pruning to adapt across early, mid, and late game stages, achieving strong performance against both human and AI opponents.</p>
-          <div class="itemLinks">
-            <a href="https://github.com/issabelleho/Othello-AI-Bot-Yogurt-Cup" target="_blank" rel="noreferrer">Code</a>
-            <span class="sep">/</span>
-            <a href="assets/othello-bot-writeup.pdf" target="_blank" rel="noreferrer">Project Report</a>
-          </div>
-        </article>
+<div class="projectGrid">
+  <!-- Card 1 -->
+  <article class="projCard">
+    <div class="projMedia">
+      <img src="assets/projects/othello.png" alt="Othello AI Bot thumbnail" />
+    </div>
 
-        <article class="item">
-          <h3>Vice President Media & Technology - Women in Tech McGill</h3>
-          <p>Curated promotional content, handled all social media correspondence and presence, designed merchandise, and increased social media engagement by 330.4% while reaching 89.6% more users than the previous year.</p>
-          <div class="itemLinks">
-            <a href="#" target="_blank" rel="noreferrer">See my designs!</a>
-          </div>
-        </article>
+    <div class="projBody">
+      <h3>Othello AI Bot<span class="projSub">Utilized: Python</span></h3>
+      <p>
+        An Othello AI combining MCTS and Minimax + Alpha-Beta pruning search strategies to adapt across game stages. Achieved high winrates against real players and AI.
+      </p>
+      <div class="itemLinks">
+        <a href="https://github.com/issabelleho/Othello-AI-Bot-Yogurt-Cup" target="_blank" rel="noreferrer">Code</a>
+        <span class="sep">/</span>
+        <a href="assets/othello-bot-writeup.pdf" target="_blank" rel="noreferrer">Project Report</a>
+      </div>
+    </div>
+  </article>
 
-        <article class="item">
-          <h3>Social Media Executive</h3>
-          <p>Handled all tasks under the communications role, created promotional content, and drafted listservs for undergrad computer science constituents.</p>
-        </div>
-       </article>
+  <!-- Card 2 -->
+  <article class="projCard">
+    <div class="projMedia">
+      <img src="assets/projects/wit.png" alt="Women in Tech design thumbnail" />
+    </div>
 
-      <article class="item">
-          <h3>Othello AI Bot</h3>
-          <p>An Othello AI that combines Monte Carlo Tree Search and Minimax with Alpha-Beta pruning to adapt across early, mid, and late game stages, achieving strong performance against both human and AI opponents.</p>
-          <div class="itemLinks">
-            <a href="https://github.com/issabelleho/Othello-AI-Bot-Yogurt-Cup" target="_blank" rel="noreferrer">Code</a>
-            <span class="sep">/</span>
-            <a href="assets/othello-bot-writeup.pdf" target="_blank" rel="noreferrer">Project Report</a>
-          </div>
-        </article>
+    <div class="projBody">
+      <h3 class="projTitle">
+  VP Media & Technology
+  <span class="projSub">Women in Tech McGill</span>
+</h3>
+      <p>Curated promotional content and schedules, led the media team, designed merchandise, and grew engagement by 330.4%.</p>
+      <div class="itemLinks">
+        <a href="designs.html">See my designs!</a>
+      </div>
+    </div>
+  </article>
 
-      <footer class="footer">
-        <span>isabelle ho <span id="year"></span></span>
-      </footer>
-    </main>
+  <!-- Card 3 -->
+  <article class="projCard">
+    <div class="projMedia">
+      <img src="assets/projects/news.png" alt="berts news thumbnail" />
+    </div>
+    <div class="projBody">
+      <h3 class="projTitle">
+      BERT for News Classification: Probing vs Fine-Tuning
+      <span class="projSub">Utilized: Python</span>
+</h3>
+      <p>A comparative analysis of BERT probing and fine-tuning on the AG News dataset, using KNN and logistic regression on frozen embeddings versus end-to-end transformer training, with attention visualizations for interpretability.</p>
+    </div>
+  </article>
 
-    <script>
-      const y = document.getElementById("year");
-      if (y) y.textContent = new Date().getFullYear();
-    </script>
-  </body>
-</html>
+
+   <!-- 4 -->
+<article class="projCard">
+  <div class="projMedia">
+      <img src="assets/projects/thinice.png" alt="thinice thumbnail" />
+    </div>
+  <div class="projBody">
+      <h3 class="projTitle">
+      Thin Ice - McGame Jam 2025
+      <span class="projSub">Utilized: Unity, C#, Blender, Procreate</span>
+</h3>
+    
+    <p>
+      A cozy-styled shop management game using C# and the Unity game engine with a team of 4 programmers. Produced original 2D and 3D art assets and animations. Directed the game planning and design process.
+    </p>
+    <div class="itemLinks">
+      <a href="https://www.artstation.com/artwork/rl369L" target="_blank" rel="noreferrer">Look at the art here!</a>
+    </div>
+  </div>
+</article>
+
+<!-- 5 -->
+<article class="projCard">
+  <div class="projMedia">
+      <img src="assets/projects/bitterbeans.png" alt="bitterbeans thumbnail" />
+    </div>
+  <div class="projBody">
+      <h3 class="projTitle">
+      Bitter Beans - McGame Jam 2024
+      <span class="projSub">Utilized: Unity, Procreate</span>
+      </h3>
+    
+    <p>
+      A Unity-based mystery murder game where players investigate suspects and crime scenes as a detective. Utilized C# to implement interactive elements, dynamic puzzles, polished visuals, and sound effects.
+Handled all the art and animation using Procreate.
+    </p>
+    <div class="itemLinks">
+      <a href="https://www.artstation.com/artwork/3EX0Ro" target="_blank" rel="noreferrer">Look at the art here!</a>
+    </div>
+  </div>
+</article>
+
+<!-- 6 -->
+<article class="projCard">
+  <div class="projMedia">
+      <img src="assets/projects/riftboundcats.png" alt="riftbound cats thumbnail" />
+    </div>
+  <div class="projBody">
+    <h3>Riftbound Cats - Blindboxes<span class="projSub">Utilized: Maya, Blender, Nomad Sculpt, Procreate, 3D Printing</span></h3>
+    <p>
+      3D modelled and rigged lowpoly designs of my own cats as League of Legends Champions/Riftbound Deck Legends. Hand-crafted these figurines as blind box figurines, designed the 2D blind box art, and created playing cards with rendered 3D models.
+
+    </p>
+    <div class="itemLinks">
+      <a href="https://www.artstation.com/artwork/DLD46E" target="_blank" rel="noreferrer">Look at the art here!</a>
+    </div>
+  </div>
+</article>
+
+<!-- 7 -->
+ <article class="projCard">
+  <div class="projMedia">
+      <img src="assets/projects/mlp.png" alt="mlp thumbnail" />
+    </div>
+  <div class="projBody">
+    <h3>MLP Classification on KMNIST<span class="projSub">Utilized: Python</span></h3>
+    <p>
+      Handwritten character recognition using neural networks. We implemented a multilayer perceptron from scratch, including backpropagation and gradient checking, and evaluated how architecture depth, activation functions, and regularization affect performance. Results are compared against a convolutional neural network baseline implemented in TensorFlow/Keras.
+    </p>
+  </div>
+</article>
+
+<!-- 8 -->
+<article class="projCard">
+  <div class="projMedia">
+      <img src="assets/projects/milk.png" alt="milk thumbnail" />
+    </div>
+  <div class="projBody">
+    <h3>Milk - 2D Animation<span class="projSub">Utilized: Procreate</span></h3>
+    <p>
+      2D animation of a kitchen scene created frame-by-frame.
+    </p>
+    <div class="itemLinks">
+      <a href="https://www.artstation.com/artwork/nJzrw6">Watch it here!</a>
+    </div>
+  </div>
+</article>
+
+<!-- 9 -->
+<article class="projCard">
+  <div class="projMedia">
+      <img src="assets/projects/MP3scorer.png" alt="MP3scorer thumbnail" />
+    </div>
+  <div class="projBody">
+    <h3>MP3 Scorer<span class="projSub">Utilized: Python, Flask, JS, Procreate</span></h3>
+    <p>
+      An application that converts MP3 files into sheet music using audio processing models to extract melodies and recompose them for instruments. 
+
+
+    </p>
+    <div class="itemLinks">
+      <a href="https://github.com/gloriajnam/codejam13_mp3scorer" target="_blank" rel="noreferrer">Code</a>
+    </div>
+  </div>
+</article>
+
+<!-- 10 -->
+ <article class="projCard">
+  <div class="projMedia">
+      <img src="assets/projects/breakfast.png" alt="breakfast thumbnail" />
+    </div>
+  <div class="projBody">
+    <h3>Creative Director + Animator</h3>
+    <p>
+      Directed the set design, assisted with pre-production, filming, post-production, and created the 2D animation intro of "Breakfast", a music video by Haleluya Hailu. Now released on Spotify and Youtube.
+    </p>
+    <div class="itemLinks">
+      <a href="https://www.youtube.com/watch?v=q7J-6Z_FmHU">Watch it here!</a>
+    </div>
+  </div>
+</article>
+<!-- 11 -->
+  <article class="projCard">
+    <div class="projMedia">
+      <img src="assets/projects/csus.png" alt="Women in Tech design thumbnail" />
+    </div>
+
+    <div class="projBody">
+      <h3 class="projTitle">
+  Social Media Executive
+  <span class="projSub">Computer Science Undergrad Society</span>
+</h3>
+      <p>Handled all communications tasks, created promotional content, and drafted listservs sent to the entire CS undergrad society.</p>
+    </div>
+</article>
+    
+  
+</article>
+
+</div>
+
