@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ballet:opsz@16..72&display=swap');
 
 /* Black + white only */
 :root{
@@ -14,11 +16,16 @@ body{
   margin: 0;
   background: var(--bg);
   color: var(--fg);
-  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  font-family: "JetBrains Mono", monospace;
 }
 
 a{ color: var(--fg); text-decoration: none; }
 a:hover{ text-decoration: underline; }
+.iconBtn, .back:hover,
+.iconBtn:hover{
+  text-decoration: none;
+}
+
 
 .wrap{
   width: min(980px, calc(100% - 32px));
@@ -40,12 +47,58 @@ a:hover{ text-decoration: underline; }
   .homeGrid{ grid-template-columns: 1fr; min-height: auto; padding-top: 10px; }
 }
 
-h1{
-  margin: 0 0 10px;
-  font-size: clamp(34px, 4.6vw, 54px);
-  letter-spacing: -0.8px;
+#home h1{
+  font-family: "Monsieur La Doulaise", cursive;
+  font-weight: 400;
   line-height: 1.05;
 }
+
+#home h1 .hi{
+  font-family: "Ballet", cursive;
+  font-size:  2.5em;
+  margin-right: 0.15em;
+}
+
+#home h1 .name{
+  font-size: 2.3em;
+  position: relative;
+  color: #fff;
+
+  text-shadow:
+    0 0 4px rgba(140, 190, 255, 0.9),
+    0 0 12px rgba(140, 190, 255, 0.7),
+    0 0 24px rgba(140, 190, 255, 0.45);
+}
+
+/* ---- Title overlay highlight icon ---- */
+.titleWrap{
+  position: relative;
+  align-items: baseline;
+  gap: 0.35em;
+}
+
+#home h1 .name{
+  position: relative;
+  display: inline-block;
+}
+.titleWrap .im {
+  font-family: "Monsieur La Doulaise", cursive;
+  font-size: 2.3em;
+  opacity: 1;
+  margin-right: 0.15em;
+}
+/* the overlay image */
+.titleHighlight{
+  position: absolute;
+  right: -225px;  
+  top: -320px;
+  width: 650px;    
+  height: auto;
+  pointer-events: none;
+  opacity: 89%;
+}
+
+
 .sub{
   margin: 0 0 22px;
   color: var(--fg-dim);
@@ -54,70 +107,174 @@ h1{
   max-width: 54ch;
 }
 
-/* Circle photo */
-.photoWrap{
-  width: min(320px, 70vw);
-  aspect-ratio: 1 / 1;
-  border-radius: 999px;
-  overflow: hidden;
+/* --- Home page photo as mini browser --- */
+.photoBrowser{
+  width: min(420px, 90%);
   border: 1px solid var(--line);
-  margin-left: auto;
+  border-radius: 0;
+  overflow: hidden;
+  background: #000000;
+  margin-left: auto; /* keeps it to the right column */
 }
-@media (max-width: 860px){
-  .photoWrap{ margin: 0; }
+
+.photoTop{
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--line);
+  background: #1f1f1f;
 }
-.photo{
+
+
+.photoNav{
+  justify-self: start;
+  display: flex;
+  gap: 4px;
+}
+
+.photoNav .navBtn.fake,
+.photoX{
+  width: 30px;
+  height: 30px;
+
+  display: grid;
+  place-items: center;
+
+  background: #0f0c0c;
+  color: #dbadd7;
+  font-size: 14px;
+  line-height: 1;
+
+  border: 1px solid var(--line);
+  box-sizing: border-box;
+
+  box-shadow:
+    inset 1px 1px 0 rgba(219, 219, 219, 0.18),   /* top-left highlight */
+    inset -1px -1px 0 rgba(0,0,0,0.25),       /* bottom-right inner shade */
+    2px 2px 0 rgba(0,0,0,0.75);               /* outer bottom-right lift */
+
+  user-select: none;
+}
+
+
+.photoNav .navBtn.fake:hover,
+.photoX:hover{
+  border-color: rgba(255,255,255,0.45);
+  box-shadow:
+    inset 1px 1px 0 rgba(255,255,255,0.25),
+    inset -1px -1px 0 rgba(0,0,0,0.35),
+    3px 3px 0 rgba(0,0,0,0.85);
+}
+
+.photoNav .navBtn.fake:nth-child(3){
+  font-size: 13px;
+}
+
+
+
+
+.photoAddress{
+  justify-self: center;
+  font-size: 12px;
+  color: var(--fg-dim);
+  background: #141414;
+  border: 1px solid var(--line);
+  padding: 6px 10px;
+  border-radius: 0;
+  min-width: 220px;
+  text-align: center;
+}
+
+.photoX{
+  justify-self: end;
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  background: #66666;
+  color: #cca1c3;
+  font-size: 16px;
+  user-select: none;
+}
+
+.photoBody{
+  padding: 0; /* image touches the frame */
+}
+
+/* rectangle crop */
+.photoRect{
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: 340px;        /* adjust this to taste */
+  object-fit: cover;    /* crops nicely */
+  display: block;
+}
+.photoBrowser{ width: min(480px, 100%); }
+.photoRect{ height: 380px; } /* taller */
+
+
+/* Folder row */
+.folderBtn,
+.folderBtn:hover{
+  text-decoration: none;
+}
+
+.folderRow{
+  display: flex;
+  gap: 14px;              /* spacing between folders */
+  flex-wrap: wrap;
+  align-items: flex-start;
+  margin: 16px 0 12px;
+}
+
+/* Both <a> and <button> */
+.folderBtn{
+  appearance: none;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  color: var(--fg);
+  font: inherit;RE
+  cursor: pointer;
+
+  display: grid;
+  justify-items: center;
+  gap: 8px;
+  text-decoration: none;   /* prevent underline */
+}
+
+/* Folder icon image */
+.folderIcon{
+  width: 100px;            
+  height: auto;
   display: block;
 }
 
-/* Icon row */
-.iconRow{
-  width: 100%;
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-  align-items: left;
-  justify-content: center;
-  margin-bottom: 14px;
-}
-
-
-
-.iconBtn{
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 14px;
-  border: 1px solid var(--line);
-  background: transparent;
+/* Folder “name” label */
+.folderName{
+  font-size: 13px;
   color: var(--fg);
-  border-radius: 14px;
-  cursor: pointer;
-  font-size: 14px;
+  padding: 6px 10px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 
-.iconBtn:hover{
-  border-color: rgba(255,255,255,0.45);
+/* Hover highlight: "full filled blue border" vibe */
+.folderBtn:hover .folderName,
+.folderBtn:focus-visible .folderName{
+  background: rgba(80, 140, 255, 0.28);      /* filled blue */
+  border-color: rgba(80, 140, 255, 0.95);    /* strong blue border */
+  color: #fff;
+  outline: none;
 }
 
-.icon{
-  width: 36px;
-  height: 36px;
-  border-radius: 12px;
-  border: 1px solid var(--line);
-  display: grid;
-  place-items: center;
-  font-weight: 800;
-  letter-spacing: -0.2px;
+/* keyboard focus ring */
+.folderBtn:focus-visible{
+  outline: none;
 }
 
-.iconLabel{
-  color: var(--fg);
-  font-weight: 650;
-}
 
 .tinyLinks{
   margin-top: 6px;
@@ -136,10 +293,10 @@ h1{
   margin: 6px 0 18px;
 }
 .sectionTop h2{
-  margin: 0;
-  font-size: 24px;
-  letter-spacing: -0.4px;
+  font-size:  2.5em;
+  margin-right: 0.15em;
 }
+
 
 .back{
   border: 1px solid var(--line);
@@ -186,14 +343,19 @@ h1{
   justify-content: center;
 }
 
-/* -------- About page layout (optional) -------- */
+/* About page layout   */
 .aboutLayout{
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 18px;
-  align-items: start;
-  max-width: 900px;
+  margin: 0 auto;          /* centers the grid block */
 }
+
+.aboutText{
+  text-align: center;      /* center text */
+}
+
+.aboutGallery{
+  justify-items: center;   /* center images */
+}
+
 
 @media (max-width: 900px){
   .aboutLayout{
@@ -201,35 +363,67 @@ h1{
   }
 }
 
-.aboutText h3{
-  margin: 0 0 10px;
-  font-size: 20px;
+.aboutText h3{ 
+  font-family: "Ballet", cursive;
+  font-weight: 400;
+  line-height: 10px;
+  font-size: 90px;
+  justify-self: center;
 }
+
 .aboutText p{
-  margin: 0 0 12px;
-  color: var(--fg-dim);
-  line-height: 1.7;
+  max-width: 60ch;            /* keeps line length readable */
+  margin-left: auto;
+  margin-right: auto;
+
+  text-align: justify;
+  text-justify: inter-word; 
+  line-height: 1.75;
+  margin-bottom: 18px;
 }
+
 
 .aboutLinks{
   margin-top: 8px;
   font-size: 13px;
   color: var(--fg-dim);
 }
-
-.aboutGallery{
+/* make the image row wider than the text column */
+.aboutImagesRow{
+  width: min(760px, 100%);
+  margin: 24px auto;
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
 }
 
-.aboutGallery img{
+
+
+.aboutImageSmall{
   width: 100%;
-  height: auto;
-  display: block;
-  border: 1px solid var(--line);
-  border-radius: 18px;
+  height: auto;          /* a bit taller looks better for “contain” */
+  object-fit: cover;    
+  background: #000;       /* shows bars nicely */
 }
+
+.aboutImageMedium{
+  width: min(700px, 100%);   /* 👈 caps width */
+  height: 320px;             /* 👈 controls height */
+  object-fit: cover;
+  margin: 24px auto;         /* 👈 center it */
+  display: block;
+
+  border: 1px solid var(--line);
+ =
+}
+
+
+@media (max-width: 700px){
+  .aboutImagesRow{
+    grid-template-columns: 1fr;
+  }
+}
+
 
 /* -------- Contact modal (mini browser popup) -------- */
 .modal{
@@ -246,6 +440,17 @@ h1{
 .miniBody{  font-family: 'JetBrains Mono', monospace;
 }
 
+/* Contact modal link hover */
+.miniBody .miniValue{
+  color: #fff;
+  transition: color 0.2s ease;
+}
+
+.miniBody .miniValue:hover{
+  color: #cca1c3; /* soft pink */
+  text-decoration: underline;
+  text-shadow: 0 0 6px rgba(204,161,195,0.6);
+}
 
 
 .modal.is-open{
@@ -291,7 +496,7 @@ h1{
   gap: 6px;
 }
 .navBtn:hover{
-  color: #ffffff;
+  color: #ff00b3;
   border-color: rgba(255, 255, 255, 0.4);
 }
 
@@ -337,7 +542,8 @@ h1{
 
 
 .miniX:hover{
-  color: #fff;
+  color: #ff00b3;
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
 .miniBody{
@@ -369,4 +575,15 @@ h1{
 .miniValue{
   color: #fff;
   word-break: break-word;
+}
+
+
+/* project page */
+.projectsTitle{
+  font-family: "Ballet", cursive;
+  font-weight: 400;
+  line-height: 10px;
+  font-size: 90px;
+  text-align: center;
+  margin: 10px 0 28px;
 }

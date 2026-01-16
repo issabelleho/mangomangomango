@@ -9,87 +9,96 @@
 
   <body>
     <main class="wrap">
+
       <!-- HOME -->
-      <section id="home" class="panel is-active" aria-label="Home">
-        <div class="homeGrid">
-          <div class="left">
-            <h1>Hi! I’m Isabelle :)</h1>
-            <p class="sub">
-              I’m a student at McGill University.
-            </p>
+<section id="home" class="panel is-active" aria-label="Home">
+  <div class="homeGrid">
+    <div class="left">
 
-            <div class="iconRow" aria-label="Quick links">
-              <button class="iconBtn" type="button" data-go="projects" aria-label="Projects and experience">
-                <span class="icon">&lt;3</span>
-                <span class="iconLabel">Projects</span>
-              </button>
+      <h1 class="titleWrap">
+        <span class="hi">Hi!</span>
+        <span class="im">I’m   </span>
+        <span class="name">
+           Isabelle
+          <img class="titleHighlight" src="assets/title-highlight.png" alt="" aria-hidden="true" />
+        </span>
+      </h1>
 
-              <a class="iconBtn" href="about.html" aria-label="About me">
-                <span class="icon">:)</span>
-                <span class="iconLabel">About me</span>
-              </a>
 
-              <!-- Contact opens modal -->
-              <button class="iconBtn" type="button" data-modal-open="contact" aria-label="Contact me">
-                <span class="icon">✉</span>
-                <span class="iconLabel">Contact Me</span>
-              </button>
-            </div>
 
-            <div class="tinyLinks">
-              <a href="https://github.com/issabelleho" target="_blank" rel="noreferrer">GitHub</a>
-              <span class="sep">/</span>
-              <a href="https://www.artstation.com/lilho" target="_blank" rel="noreferrer">Artstation</a>
-              <span class="sep">/</span>
-            </div>
-          </div>
 
-          <div class="right">
-            <div class="photoWrap" aria-label="Profile photo">
-              <img class="photo" src="assets/me.jpg" alt="Photo of Isabelle Ho" />
-            </div>
-          </div>
-        </div>
-      </section>
+      <p class="sub">I'm a student and I like to make things</p>
 
-      <!-- PROJECTS -->
-      <section id="projects" class="panel" aria-label="Projects and experience">
-        <header class="sectionTop">
-          <button class="back" type="button" data-go="home">← Home</button>
-          <h2>Projects & Experience</h2>
-        </header>
+      <div class="folderRow" aria-label="Folders">
+        <a class="folderBtn" href="projects.html" aria-label="Projects and experience">
+          <img class="folderIcon" src="assets/folder-projects.png" alt="" aria-hidden="true" />
+          <span class="folderName">my_projects</span>
+        </a>
 
-        <div class="list">
-          <article class="item">
-            <h3>KMNIST ConvNet</h3>
-            <p>Short one-liner: what you built + why it matters.</p>
-            <div class="itemLinks">
-              <a href="#" target="_blank" rel="noreferrer">Code</a>
-              <span class="sep">/</span>
-              <a href="#" target="_blank" rel="noreferrer">Write-up</a>
-            </div>
-          </article>
+        <a class="folderBtn" href="about.html" aria-label="About me">
+          <img class="folderIcon" src="assets/folder-about.png" alt="" aria-hidden="true" />
+          <span class="folderName">about_me</span>
+        </a>
 
-          <article class="item">
-            <h3>DB Query Evaluation</h3>
-            <p>Short one-liner: joins / cost / optimization / results.</p>
-            <div class="itemLinks">
-              <a href="#" target="_blank" rel="noreferrer">Repo</a>
-            </div>
-          </article>
+        <button class="folderBtn" type="button" data-modal-open="contact" aria-label="Contact me">
+          <img class="folderIcon" src="assets/folder-contact.png" alt="" aria-hidden="true" />
+          <span class="folderName">contact me!</span>
+        </button>
+      </div>
 
-          <article class="item">
-            <h3>Unity Pathfinding + AI</h3>
-            <p>Short one-liner: planner + visualization + behaviors.</p>
-            <div class="itemLinks">
-              <a href="#" target="_blank" rel="noreferrer">Demo</a>
-              <span class="sep">/</span>
-              <a href="#" target="_blank" rel="noreferrer">Code</a>
-            </div>
-          </article>
-        </div>
-      </section>
 
+      <div class="folderRow folderRow--small" aria-label="External links">
+        <a class="folderBtn" href="https://www.artstation.com/lilho" target="_blank" rel="noreferrer" aria-label="Artstation">
+          <img class="folderIcon folderIcon--small" src="assets/folder-artstation.png" alt="" aria-hidden="true" />
+          <span class="folderName">Artstation</span>
+        </a>
+        <a class="folderBtn" href="https://github.com/issabelleho" target="_blank" rel="noreferrer" aria-label="GitHub">
+          <img class="folderIcon folderIcon--small" src="assets/folder-github.png" alt="" aria-hidden="true" />
+          <span class="folderName">Github</span>
+        </a>
+
+        
+        <a class="folderBtn"
+          href="https://www.linkedin.com/in/isabelle-h-739431270/"
+          target="_blank"
+          rel="noreferrer"
+          aria-label="LinkedIn">
+          <img class="folderIcon folderIcon--small"
+              src="assets/folder-linkedin.png"
+              alt=""
+              aria-hidden="true" />
+          <span class="folderName">LinkedIn</span>
+        </a>
+        
+
+      </div>
+
+</div>
+    <div class="right">
+      <div class="photoBrowser" aria-label="Profile photo in mini browser">
+  <div class="photoTop" aria-hidden="true">
+    <div class="photoNav">
+      <span class="navBtn fake">←</span>
+      <span class="navBtn fake">→</span>
+      <span class="navBtn fake">⟳</span>
+    </div>
+
+    <div class="photoAddress">isabelles_portfolio</div>
+
+    <div class="photoX">×</div>
+  </div>
+
+  <div class="photoBody">
+    <img class="photoRect" src="assets/me.jpg" alt="Photo of Isabelle Ho" />
+  </div>
+</div>
+
+    </div>
+  </div>
+</section>
+
+
+    
       <!-- CONTACT MODAL -->
       <div class="modal" id="contactModal" aria-hidden="true">
 
@@ -130,7 +139,7 @@
       </div>
 
       <footer class="footer">
-        <span>© <span id="year"></span> Isabelle Ho</span>
+        <span>isabelle ho <span id="year"></span></span>
       </footer>
     </main>
 
